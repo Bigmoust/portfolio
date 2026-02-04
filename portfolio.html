@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.17.0/devicon.min.css">
+</head>
+
+<body>
+<div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar" id="scrollProgressBar"></div>
+</div>
+
+<!-- Background video -->
+<video class="bg-video" autoplay muted loop playsinline preload="metadata" poster="./assets/poster.jpg">
+    <source src="./assets/g.mp4" type="video/mp4" />
+</video>
+
+<!-- Overlay (text readability) -->
+<div class="bg-overlay" aria-hidden="true"></div>
+
+<!-- Top nav -->
+<header class="topbar">
+    <nav class="nav">
+        <a class="nav__link" href="#home">Home</a>
+        <a class="nav__link" href="#projects">Projects</a>
+        <a class="nav__link" href="#skills">Skills</a>
+    </nav>
+</header>
+
+<main class="snap">
+    <!-- HERO -->
+    <section id="home" class="section hero">
+        <div class="container hero__content">
+            <p class="hero__eyebrow">CHEIKH MOUSTAINE BA</p>
+            <h1 class="hero__title">Computer Science Student</h1>
+            <p class="hero__subtitle">
+                End-to-end product builder. Clean code. Real impact.
+            </p>
+            <div class="hero__cta">
+                <a class="btn btn--primary" href="#projects">View my projects</a>
+                <a class="btn btn--ghost" href="#skills">My skills</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section__title">PROJECTS</h2>
+
+            <div class="grid projects-grid">
+                <article class="card project-card" data-project="bibligo" style="--bg: url('./assets/projects/bibligo.jpg');">
+                    <div class="card__body">
+                        <h3 class="card__title">BIBLIGO</h3>
+                        <p class="card__desc">JavaFX Library Book Reservation App</p>
+                        <button class="btn btn--primary btn--sm">Read more</button>
+                    </div>
+                </article>
+
+                <article class="card project-card" data-project="oktzy" style="--bg: url('./assets/projects/oktzy.jpg');">
+                    <div class="card__body">
+                        <h3 class="card__title">vide</h3>
+                        <p class="card__desc">...</p>
+                        <button class="btn btn--primary btn--sm">Read more</button>
+                    </div>
+                </article>
+
+                <article class="card project-card" data-project="noto" style="--bg: url('./assets/projects/noto.jpg');">
+                    <div class="card__body">
+                        <h3 class="card__title">vide()</h3>
+                        <p class="card__desc">...</p>
+                        <button class="btn btn--primary btn--sm">Read more</button>
+                    </div>
+                </article>
+
+                <article class="card project-card" data-project="guruweather" style="--bg: url('./assets/projects/guruweather.jpg');">
+                    <div class="card__body">
+                        <h3 class="card__title">vide</h3>
+                        <p class="card__desc">...</p>
+                        <button class="btn btn--primary btn--sm">Read more</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section__title">MY TECHNOLOGIES</h2>
+
+            <div class="skills-grid">
+                <div class="skill">
+                    <i class="devicon-html5-plain colored" aria-label="HTML5" role="img"></i>
+                    <span>HTML5</span>
+                </div>
+
+                <div class="skill">
+                    <i class="devicon-css3-plain colored" aria-label="CSS3" role="img"></i>
+                    <span>CSS3</span>
+                </div>
+
+                <div class="skill">
+                    <i class="devicon-javascript-plain colored" aria-label="JavaScript" role="img"></i>
+                    <span>JavaScript</span>
+                </div>
+
+                <div class="skill">
+                    <i class="devicon-python-plain colored" aria-label="Python" role="img"></i>
+                    <span>Python</span>
+                </div>
+
+                <div class="skill">
+                    <i class="devicon-java-plain colored" aria-label="Java" role="img"></i>
+                    <span>Java</span>
+                </div>
+
+                <div class="skill">
+                    <i class="devicon-csharp-plain colored" aria-label="C#" role="img"></i>
+                    <span>C#</span>
+                </div>
+
+                <div class="skill">
+                    <i class="devicon-git-plain colored" aria-label="Git" role="img"></i>
+                    <span>Git</span>
+                </div>
+
+                <div class="skill">
+                    <i class="devicon-docker-plain colored" aria-label="Docker" role="img"></i>
+                    <span>Docker</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<dialog class="modal modal--project" id="projectModal">
+    <div class="project-modal">
+        <button class="project-modal__close" aria-label="Close">✕</button>
+
+        <!-- Top -->
+        <div class="project-hero">
+            <div class="project-hero__left">
+                <h3 class="project-hero__title" id="pmTitle">PROJECT</h3>
+                <p class="project-hero__desc" id="pmDesc"></p>
+
+                <div class="project-hero__actions"></div>
+            </div>
+
+            <div class="project-hero__right">
+                <video id="pmVideo" class="project-hero__video" controls playsinline preload="metadata">
+                    <source id="pmVideoSrc" src="" type="video/mp4" />
+                </video>
+            </div>
+        </div>
+
+        <!-- Bottom grid -->
+        <div class="project-grid">
+            <section class="pcard">
+                <div class="pcard__head">
+                    <span class="pcard__icon pcard__icon--goal">🎯</span>
+                    <h4 class="pcard__title">GOAL</h4>
+                </div>
+                <div class="pcard__body" id="pmGoal"></div>
+            </section>
+
+            <section class="pcard">
+                <div class="pcard__head">
+                    <span class="pcard__icon pcard__icon--feat">⚡</span>
+                    <h4 class="pcard__title">FEATURES</h4>
+                </div>
+                <ul class="pcard__list" id="pmFeatures"></ul>
+            </section>
+
+            <section class="pcard">
+                <div class="pcard__head">
+                    <span class="pcard__icon pcard__icon--tech">🛠️</span>
+                    <h4 class="pcard__title">TECH</h4>
+                </div>
+                <div class="pcard__body" id="pmTech"></div>
+            </section>
+
+            <section class="pcard">
+                <div class="pcard__head">
+                    <span class="pcard__icon pcard__icon--chal">💡</span>
+                    <h4 class="pcard__title">CHALLENGES</h4>
+                </div>
+                <ul class="pcard__list" id="pmChallenges"></ul>
+            </section>
+        </div>
+    </div>
+</dialog>
+
+<script src="./main.js"></script>
+</body>
+</html>
