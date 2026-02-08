@@ -38,52 +38,57 @@ const PROJECTS = {
         ]
     },
 
-    oktzy: {
-        title: "OKTZY",
-        desc: "Video library and timestamp manager that helps organize clips, chapters, tags, and searchable timestamps for fast retrieval.",
-        liveUrl: "#",
-        codeUrl: "#",
-        videoSrc: "./assets/projects/demos/oktzy.mp4",
-        goal: "Provide a clean workflow to save, search, and reuse timestamps and clips across a personal video library.",
+    AIPROJECTCRITIC: {
+        title: "AI-PROJECT-CRITIC",
+        desc: "AI Project Critic is a static-analysis dashboard that reviews a Python repository in minutes. " +
+            "You upload a .zip, the tool scans the codebase for lint issues, security risks then outputs a quality score plus a prioritized action plan.",
+        videoSrc: "./assets/projects/demos/bp.mp4",
+        goal: [
+            "Provide a fast, standardized code review for Python projects.",
+            "Transform multiple tools into one actionable dashboard (score + priorities).",
+            "Help developers quickly identify security risks and maintainability bottlenecks."
+        ],
         features: [
-            "Timestamp creation with labels and tags",
-            "Search and filtering by tag / title / time ranges",
+            "Upload repo (.zip) and run automated review",
+            "Quality scoring: Overall / Maintainability / Security",
             "Export / share timestamps for reuse",
-            "Clean UI for browsing library"
+            "Export report (report.md) for sharing / documentation"
         ],
         tech: `
-      <p><strong>Stack</strong><br>Next.js, Node.js, Database</p>
-      <p><strong>Architecture</strong><br>Client UI + API + persistence layer</p>
+      <p><strong>Python</strong><br>Streamlit,Pandas</p>
+      <p><strong>Architecture</strong><br>Extract ZIP → Scan Pipeline → Normalize Findings → Scoring → Report Export</p>
     `,
         challenges: [
-            "Consistent timestamp format across sources",
-            "Fast search without bloating the UI",
-            "Keeping the UX minimal but powerful"
+            "Normalizing outputs from different tools into a single findings schema",
+            "Keeping summaries evidence-based to reduce “hallucinations”",
+            "Windows PATH issues, venv, sys.executable"
         ]
     },
 
-    noto: {
-        title: "NOTO()",
-        desc: "Rich text editor & note app to organize thoughts, structure knowledge, and keep what matters accessible.",
-        liveUrl: "#",
-        codeUrl: "#",
+    MessyMLPipeline:{
+        title: "Messy ML Pipeline (Titanic)",
+        desc: "End-to-end machine learning pipeline built for messy real-world tabular data. Includes schema validation and cleaning policies, baseline vs model evaluation, batch inference, drift monitoring (PSI), and an automated retraining orchestrator exposed via a FastAPI service.",
         videoSrc: "./assets/projects/demos/noto.mp4",
-        goal: "Build a fast note-taking app with rich text editing, organization, and reliable persistence.",
+        goal: [
+            "Build a production-like ML workflow: from messy ingestion to a deployable inference service.",
+            "Ensure reproducibility and safety through validation + artifacts (metrics, drift report, model bundle)."
+        ],
         features: [
-            "Rich text editor with formatting",
-            "Notes organization (folders/tags)",
-            "Search across notes",
-            "Export notes"
+            "Schema validation (Pandera) + cleaning policies (type coercion, outlier capping)",
+            "Feature engineering (imputation + one-hot encoding)",
+            "Training: baseline vs logistic regression + persisted model bundle",
+            "Drift monitoring: PSI reference vs current + retrain trigger"
         ],
         tech: `
-      <p><strong>Stack</strong><br>JavaScript/TypeScript, Frontend UI, Storage</p>
-      <p><strong>Architecture</strong><br>Editor component + persistence + search indexing</p>
+      <p><strong>Python</strong><br>Pandas, NumPy, scikit-learn</p>
+      <p><strong>Architecture</strong><br>Titanic dataset → validation → training → drift (PSI) → retrain + FastAPI</p>
     `,
         challenges: [
-            "Editor state management and performance",
-            "Reliable persistence and restore",
-            "Search indexing without lag"
-        ]
+            "Handling messy data safely (types, missing, outliers) without leaking target information",
+            "Keeping train/test feature alignment stable after one-hot encoding",
+            "Making retrain orchestration robust (using venv python + stop-on-failure)"
+        ],
+
     },
 
     guruweather: {
