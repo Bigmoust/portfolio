@@ -698,7 +698,6 @@ body{
 }
 
 
-
 @keyframes titleShimmer{
     0%, 55% { transform: translateX(-120%); }
     70%, 100% { transform: translateX(120%); }
