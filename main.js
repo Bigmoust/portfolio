@@ -91,27 +91,26 @@ const PROJECTS = {
 
     },
 
-    guruweather: {
-        title: "GURUWEATHER",
-        desc: "Weather forecasting app with city search, clean forecast UI, and fast responses with caching.",
-        liveUrl: "#",
-        codeUrl: "#",
-        videoSrc: "./assets/projects/demos/guruweather.mp4",
-        goal: "Deliver a minimal, attractive weather UI with accurate forecast data and smooth browsing.",
+    MINI_LLM: {
+        title: "MINI LLM",
+        desc: "Mini LLM is a lightweight decoder-only Transformer trained for next-character prediction on a text corpus. It generates theatrical-style dialogue using temperature + top-k sampling and exposes inference through a FastAPI endpoint for interactive testing. The project focuses on end-to-end AI engineering: model implementation, training pipeline (AMP + checkpointing), and an API layer for deployment-style usage.",
+        videoSrc: "./assets/projects/demos/MINI_LLM.mp4",
+        goal: "Build a minimal, end-to-end LLM system—from scratch Transformer implementation to a usable inference API.",
         features: [
-            "User authentication",
-            "Browse catalog + book details",
-            "Search and filtering",
-            "Reserve and cancel reservations"
+            "Decoder-only Transformer with causal self-attention",
+            "Character-level tokenizer + dataset pipeline (context window / block size)",
+            "Training loop with validation, checkpointing, and gradient clipping",
+            "GPU acceleration support (AMP / TF32) for faster training"
         ],
         tech: `
-      <p><strong>Stack</strong><br>Frontend UI + Weather API</p>
-      <p><strong>Architecture</strong><br>MVC with a layered structure</p>
+      <p><strong>Python</strong><br>PyTorch</p>
+      <p><strong>FastAPI</strong><br>Uvicorn</p>
+      <p><strong>Architecture</strong><br>model.py , train.py , api.py </p>
     `,
         challenges: [
-            "Preventing double reservations",
-            "Keeping availability accurate",
-            "Catalog search performance"
+            "Stabilizing training with small models (loss spikes → grad clipping + AMP)",
+            "Keeping inference responsive (limiting max tokens, safe defaults)",
+            "Handling unknown characters / prompt constraints in a char-level tokenizer"
         ]
     }
 };
