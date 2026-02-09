@@ -68,7 +68,7 @@ const PROJECTS = {
     MessyMLPipeline:{
         title: "Messy ML Pipeline (Titanic)",
         desc: "End-to-end machine learning pipeline built for messy real-world tabular data. Includes schema validation and cleaning policies, baseline vs model evaluation, batch inference, drift monitoring (PSI), and an automated retraining orchestrator exposed via a FastAPI service.",
-        videoSrc: "./assets/projects/demos/noto.mp4",
+        videoSrc: "./assets/projects/demos/Titanic.mp4",
         goal: [
             "Build a production-like ML workflow: from messy ingestion to a deployable inference service.",
             "Ensure reproducibility and safety through validation + artifacts (metrics, drift report, model bundle)."
